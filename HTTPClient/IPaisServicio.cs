@@ -7,5 +7,7 @@ namespace ClientFactoryCore.HTTPClient
     public interface IPaisServicio
     {
         Task<List<PaisDTO>> ObtenerPaises();
+        Task<List<PaisDTO>> ObtenerPaisesPorNombre(string nombre, bool textoCompleto=false);
+        Task<List<PaisDTO>> ObtenerPaisesPorCodigo(string codigo);
     }
 }

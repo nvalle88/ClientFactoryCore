@@ -36,5 +36,18 @@ namespace ClientFactoryCore.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [Route("ObtenerPaisPorNombre")]
+        public async Task<ActionResult<List<PaisDTO>>> ObtenerPaisPorNombre(string nombre,bool textoCompleto=false)
+        {
+            try
+            {
+                return await _paisServicio.ObtenerPaisesPorNombre(nombre,textoCompleto);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }
